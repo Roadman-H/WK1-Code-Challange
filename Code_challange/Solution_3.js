@@ -1,17 +1,15 @@
 function calculatePAYE(income) {
     let tax = 0;
     if (income <= 24000) {
-        tax = 0;
-    } else if (income <= 40000) {
-        tax = (income - 24000) * 0.1;
-    } else if (income <= 60000) {
-        tax = (16000 * 0.1) + (income - 40000) * 0.15;
-    } else if (income <= 80000) {
-        tax = (16000 * 0.1) + (20000 * 0.15) + (income - 60000) * 0.2;
-    } else if (income <= 120000) {
-        tax = (16000 * 0.1) + (20000 * 0.15) + (20000 * 0.2) + (income - 80000) * 0.25;
+        tax = income * 0.1;
+    } else if (income <= 32333) {
+        tax = income * 0.25;
+    } else if (income <= 500000) {
+        tax = income * 0.30;
+    } else if (income <= 800000) {
+        tax = income * 0.325;
     } else {
-        tax = (16000 * 0.1) + (20000 * 0.15) + (20000 * 0.2) + (40000 * 0.25) + (income - 120000) * 0.3;
+        tax = income * 0.35;
     }
     return tax;
 }
